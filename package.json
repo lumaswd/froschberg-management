@@ -1,0 +1,19 @@
+{
+  "name": "froschberg-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumaswd/froschberg-management.git"
+  },
+  "author": "Lukas Machetanz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumaswd/froschberg-management/issues"
+  },
+  "homepage": "https://github.com/lumaswd/froschberg-management#readme"
+}
