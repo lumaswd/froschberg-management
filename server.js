@@ -1,9 +1,20 @@
 const express = require('express');
-const app = express();
-const PORT = process.env.port || 3000;
+const { ApolloServer, gql } = require('apollo-server-express');
+const fs = require('fs');
 
-app.get('/', (req, res) => {
-    res.send('Froschberg Management');
+const port = process.env.port || 3000;
+const typeDefs = gql(fs.readFileSync(__dirname.concat('/schema.graphql'), 'utf8'));
+const resolvers = require('./resolvers');
+
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    introspection: true,
+    playground: true
 });
 
-app.listen(PORT, () => `Server listening on port ${ PORT }`);
+const app = express();
+server.applyMiddleware({ app });
+
+
+app.listen(port, () => `Server listening on port ${ port }`);
